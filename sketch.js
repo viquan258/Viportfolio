@@ -21,23 +21,29 @@ function setup() {
   const canvas = createCanvas(windowWidth, 500);
   canvas.parent("p5-wrapper");
 
-  noLoop(); // wait until user starts audio
+  noLoop(); // Stop draw loop until mic permission is granted
 
-  const startBtn = createButton("🔊 Click to Start Audio");
-  startBtn.position(width / 2 - 100, height / 2 - 30);
+  const startBtn = createButton("🎤 Click to Enable Microphone");
+  startBtn.position(width / 2 - 120, height / 2 - 30);
   startBtn.style('font-size', '18px');
   startBtn.mousePressed(() => {
-    userStartAudio();
-    startBtn.remove();
-    initSketch(); // start everything else
-    loop();       // begin draw loop
+    userStartAudio(); // resume AudioContext
+
+    mic = new p5.AudioIn();
+    mic.start(
+      () => {
+        startBtn.remove();
+        initSketch();
+        loop();
+      },
+      () => {
+        alert("Microphone permission denied. Visuals need mic input to work.");
+      }
+    );
   });
 }
 
 function initSketch() {
-  mic = new p5.AudioIn();
-  mic.start();
-
   fft = new p5.FFT();
   fft.setInput(mic);
 
@@ -48,6 +54,7 @@ function initSketch() {
   toggleButton = createButton("🎨 Toggle BG");
   toggleButton.position(20, 20);
   toggleButton.mousePressed(() => bgMode = (bgMode + 1) % 2);
+
   noFill();
 }
 
