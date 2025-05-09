@@ -1,11 +1,9 @@
 function setup() {
     createCanvas(800, 400);
     background(30);
-  }
-  
-  function draw() {
-    fill(255, 0, 0);
-    noStroke();
-    ellipse(mouseX, mouseY, 50, 50);
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textSize(24);
+    text("Hello from p5.js", width / 2, height / 2);
   }
   
