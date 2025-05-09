@@ -12,46 +12,42 @@
     <script src="p5.min.js"></script>
     <script src="sketch.js"></script>
 
-    <style>
-
-      
-      body {
-        margin: 0;
-        font-family: sans-serif;
-        background: black;
-        color: white;
-      }
-
-      section {
-        padding: 3em 1em;
-        text-align: center;
-      }
-
-      canvas {
-  display: block;
-  margin: 2em auto;
-  max-width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-
-#unity-container {
-  position: relative;
-  z-index: 0;
-  margin: 0 auto;
-  text-align: center;
-}
-
-
-#p5-wrapper {
-  text-align: center;
-  margin: 40px auto;
-  background: #111;
-}
-
-
-    </style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: black;
+      color: white;
+    }
+    
+    section {
+      padding: 3em 1em;
+      text-align: center;
+    }
+    
+    /* 🔥 Fix layering and spacing */
+    #p5-wrapper {
+      margin-bottom: 60px;
+      background: #111;
+      padding-bottom: 2em;
+      position: relative;
+      z-index: 1;
+    }
+    
+    canvas {
+      display: block;
+      margin: 2em auto;
+      max-width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+    
+    #unity-container {
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 0;
+    }
+    
   </head>
 
   <body>
@@ -65,8 +61,8 @@
     <section>
       <h1>🕹️ Unity WebGL Project</h1>
 
-      <div id="unity-container" class="unity-desktop">
-        <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
+      <div id="unity-container">
+        <canvas id="unity-canvas" width="960" height="600"></canvas>
         <div id="unity-loading-bar">
           <div id="unity-logo"></div>
           <div id="unity-progress-bar-empty">
