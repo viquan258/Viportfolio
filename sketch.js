@@ -63,6 +63,7 @@ function initSketch() {
 }
 
 function draw() {
+  if (!fft || !mic) return; // 🛡 Safely skip until ready
   let micLevel = mic.getLevel();
   console.log("🎚 Mic Level:", micLevel); // Debug output
 
