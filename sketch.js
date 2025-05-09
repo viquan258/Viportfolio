@@ -21,23 +21,24 @@ function setup() {
   const canvas = createCanvas(windowWidth, 500);
   canvas.parent("p5-wrapper");
 
-  noLoop(); // Stop draw loop until mic permission is granted
+  noLoop(); // Wait until mic permission is granted
 
   const startBtn = createButton("🎤 Click to Enable Microphone");
   startBtn.position(width / 2 - 120, height / 2 - 30);
   startBtn.style('font-size', '18px');
+
   startBtn.mousePressed(() => {
     userStartAudio(); // resume AudioContext
-
     mic = new p5.AudioIn();
     mic.start(
       () => {
+        console.log("✅ Mic started");
         startBtn.remove();
         initSketch();
         loop();
       },
       () => {
-        alert("Microphone permission denied. Visuals need mic input to work.");
+        alert("❌ Microphone permission denied. Visuals will not respond.");
       }
     );
   });
@@ -48,7 +49,10 @@ function initSketch() {
   fft.setInput(mic);
 
   for (let i = 0; i < 5; i++) {
-    blobs.push(new SymmetricBlob(random(width * 0.25, width * 0.75), random(height * 0.25, height * 0.75)));
+    blobs.push(new SymmetricBlob(
+      random(width * 0.25, width * 0.75),
+      random(height * 0.25, height * 0.75)
+    ));
   }
 
   toggleButton = createButton("🎨 Toggle BG");
@@ -59,6 +63,9 @@ function initSketch() {
 }
 
 function draw() {
+  let micLevel = mic.getLevel();
+  console.log("🎚 Mic Level:", micLevel); // Debug output
+
   if (bgMode === 0) {
     background(10, 10, 15, 6);
   } else {
@@ -71,7 +78,6 @@ function draw() {
   let spectrum = fft.analyze();
   let bass = fft.getEnergy("bass");
   let mids = fft.getEnergy("mid");
-  let micLevel = mic.getLevel();
 
   let targetZoom = map(bass, 0, 255, 1, 1.6);
   smoothedZoom = lerp(smoothedZoom, targetZoom, 0.05);
