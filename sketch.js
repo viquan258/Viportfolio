@@ -21,6 +21,20 @@ function setup() {
   const canvas = createCanvas(windowWidth, 500);
   canvas.parent("p5-wrapper");
 
+  noLoop(); // wait until user starts audio
+
+  const startBtn = createButton("🔊 Click to Start Audio");
+  startBtn.position(width / 2 - 100, height / 2 - 30);
+  startBtn.style('font-size', '18px');
+  startBtn.mousePressed(() => {
+    userStartAudio();
+    startBtn.remove();
+    initSketch(); // start everything else
+    loop();       // begin draw loop
+  });
+}
+
+function initSketch() {
   mic = new p5.AudioIn();
   mic.start();
 
@@ -34,7 +48,6 @@ function setup() {
   toggleButton = createButton("🎨 Toggle BG");
   toggleButton.position(20, 20);
   toggleButton.mousePressed(() => bgMode = (bgMode + 1) % 2);
-
   noFill();
 }
 
@@ -73,7 +86,6 @@ function draw() {
   if (millis() - lastVariationTime > 5000) {
     variationIndex = (variationIndex + 1) % 4;
     lastVariationTime = millis();
-
     for (let blob of blobs) {
       blob.setThemeColor(variationIndex);
     }
@@ -95,8 +107,7 @@ function draw() {
 
 function keyPressed() {
   if (key === ' ') {
-    let fs = fullscreen();
-    fullscreen(!fs);
+    fullscreen(!fullscreen());
   }
 }
 
