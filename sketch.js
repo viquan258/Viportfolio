@@ -8,6 +8,7 @@ let lastVariationTime = 0;
 let variationIndex = 0;
 let bgMode = 0;
 let toggleButton;
+let micReady = false;
 
 let bassThreshold = 120;
 let overlayThreshold = 0.01;
@@ -21,24 +22,25 @@ function setup() {
   const canvas = createCanvas(windowWidth, 500);
   canvas.parent("p5-wrapper");
 
-  noLoop(); // Wait until mic permission is granted
+  noLoop();
 
-  const startBtn = createButton("🎤 Click to Enable Microphone");
+  const startBtn = createButton("\ud83c\udfa4 Click to Enable Microphone");
   startBtn.position(width / 2 - 120, height / 2 - 30);
   startBtn.style('font-size', '18px');
 
   startBtn.mousePressed(() => {
-    userStartAudio(); // resume AudioContext
+    userStartAudio();
     mic = new p5.AudioIn();
     mic.start(
       () => {
-        console.log("✅ Mic started");
+        console.log("\u2705 Mic started");
         startBtn.remove();
         initSketch();
+        micReady = true;
         loop();
       },
       () => {
-        alert("❌ Microphone permission denied. Visuals will not respond.");
+        alert("\u274c Microphone permission denied. Visuals will not respond.");
       }
     );
   });
@@ -55,7 +57,7 @@ function initSketch() {
     ));
   }
 
-  toggleButton = createButton("🎨 Toggle BG");
+  toggleButton = createButton("\ud83c\udfa8 Toggle BG");
   toggleButton.position(20, 20);
   toggleButton.mousePressed(() => bgMode = (bgMode + 1) % 2);
 
@@ -63,9 +65,10 @@ function initSketch() {
 }
 
 function draw() {
-  if (!fft || !mic) return; // 🛡 Safely skip until ready
+  if (!micReady || !fft || !mic) return;
+
   let micLevel = mic.getLevel();
-  console.log("🎚 Mic Level:", micLevel); // Debug output
+  console.log("\ud83c\udf9a Mic Level:", micLevel);
 
   if (bgMode === 0) {
     background(10, 10, 15, 6);
