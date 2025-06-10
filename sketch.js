@@ -19,9 +19,11 @@ function setup() {
     ));
   }
 
-  toggleButton = createButton("🎨 Toggle BG");
-  toggleButton.position(20, 20);
-  toggleButton.mousePressed(() => bgMode = (bgMode + 1) % 2);
+  //toggleButton = createButton("🎨 Toggle BG");
+  //toggleButton.parent("p5-wrapper");
+  //toggleButton.style("margin-top", "1em");
+  //toggleButton.mousePressed(() => bgMode = (bgMode + 1) % 2);
+  
 
   noFill();
 }
