@@ -178,6 +178,7 @@ body {
     height: auto;
   }
   
+  
 
   #oranmr-demo {
   padding: 4em 5vw;
@@ -241,6 +242,25 @@ body {
     color: solid white;
     line-height: 1.5;
   }
+
+  #p5js-context {
+    padding: 4em 2em;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .context-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1em;
+    color: #ccc;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+
+  }
+
+
+  
   
   /* Image section */
   .image {
@@ -255,3 +275,72 @@ body {
     margin: 0 auto; /* Centers the image */
   }
   
+  .image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    flex-wrap: wrap; /* allow wrap if too tight */
+  }
+  
+  .image-row img {
+    width: 22%;
+    max-width: 200px;    /* LIMIT size */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #444;
+    flex-shrink: 0;
+  }
+  
+  .video-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.video-container video {
+  max-width: 100%;
+  width: 320px;
+  border-radius: 10px;
+}
+
+.sandbox {
+  position: relative;
+  width: 90vw;
+  height: 400px;
+  margin: 2em auto;
+  background: #111;
+  border: 2px dashed #555;
+  overflow: hidden;
+}
+
+.draggable {
+  position: absolute;
+  width: 300px !important;   /* Force 150px width */
+  height: auto;              /* Maintain aspect ratio */
+  position: absolute;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  object-fit: cover;
+}
+
+#rotator {
+  margin: 2em auto;
+  width: 60%;
+  max-width: 600px;
+  position: static; /* ensures it's in the flow and scrolls normally */
+}
+
+#rotator img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+

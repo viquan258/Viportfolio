@@ -20,80 +20,112 @@
 
   <body>
     <section id="intro">
-      <div class="intro-photo">
-        <img src="me.png" alt="ViQuan photo" />
-      </div>
+      <!-- Rotator for List1 -->
+<!-- HTML -->
+<div id="rotator-list1" style="text-align: center; margin: 2em 0;">
+  <img id="scroll-image-list1" src="List1A.png" alt="Demo Image">
+</div>
+
+
       <div class="intro-text">
         <h1>Hi, I'm Vi Quan!</h1>
-        <p>I'm an interaction designer who loves exploring new ways to connect people with ideas.</p>
-        <p>Whether it's through design or interactive experiences, I enjoy making things that are both meaningful and fun.</p>
+        
+        <p>I'm an interaction designer who enjoys making things that are both meaningful and fun.</p>
         
       </div>
     </section>
     
     
     
-    
-    <!-- p5.js Section -->
     <section id="p5-wrapper">
-      <h1>P5JS Realtime Mouse Interactive</h1>
+      <h1>P5JS Realtime Mouse/ Touch Interactive</h1>
     </section>
+    <!-- p5.js Section 
+   
+
+    <div class="custom-video">
+      <a href="https://www.youtube.com/embed/ROvzF0o9MsY" target="_blank">
+        <img src="oran1.png" alt="O-RAN demo thumbnail">
+        <div class="play-button">▶</div>
+      </a>
+    </div> -->
     
-    <div id="expandable-container">
-      <button id="expand-btn">▼ More Info</button>
-      <div id="expandable-content">
+    <div id="expandable-container"> 
+      <!-- <button id="expand-btn">▼ More Info</button> -->
+      <!--<div id="expandable-content"> -->
+        <section id="p5js-context">
+          <p class="context-text">
+            I learned about P5JS and creative coding in the course <strong>Parametric Design</strong> taught by Prof. Dr. Sebastian Meier at FH Potsdam and found it fascinating.
+            <br><br>
+            Growing up with a passion for dancing and music, through my time spent in Taiwan for an exchange semester, experiencing the dance culture as well as taking part in the courses at National University of Technology Taipei (NTUT), I'm inspired by the idea of integrating visual design in real-time performance and installation.
+            <br><br>
+            Therefore, I created interactive p5.js projects that blend coding, performance, and audience interaction, and I’ve had the chance to bring some of them on stage.
+          </p>
+        </section>
+        
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/NRvKMMtC9JA"
+          src="https://www.youtube.com/embed/ROvzF0o9MsY"
 
           title="YouTube video player"
           frameborder="0"
           allowfullscreen
         ></iframe>
-        <p>
-          I create interactive p5.js projects that react to sound and movement,<br>
-          blending code, performance, and audience interaction—<br>
-          both in the browser and on stage.
-        </p>
+        
         
       </div>
-    </div>
+    <!--</div>-->
     
         <!-- Game -->
         <section id="p5-wrapper">
-          <h1>Interactive Programming Design: Pizza Box </h1>
-        </section>
+          <h1>Interactive Programming Design: Pizza Box</h1>
 
+        </section>
+        
+          <div class="video-container">
+            <video controls autoplay loop muted playsinline>
+              <source src="Part1Game.webm" type="video/webm">
+              Your browser does not support the video tag.
+            </video>
+        
+            <video controls autoplay loop muted playsinline>
+              <source src="Part2Game.webm" type="video/webm">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+       
         
    
 
     <section id="carousel">
 
 
-      <p>
-        This project was created within<br>
-        the Course Interactive Programming Design,<br>
-        taught by Tz-Heng Fu, NTUT, Taiwan.<br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-      </p>
+      <section id="p5js-context">
+        <p class="context-text">
+          This project was created within the course <strong>Interactive Programming Design</strong>, taught by <strong>Tz-Heng Fu</strong> at NTUT, Taiwan.
+          <br><br>
+          I learned how to approach application development, in this context, a game—from a software engineering perspective. I gained hands-on experience building character controls, dialogs and inventory systems, state machines, and class diagrams.
+          <br><br>
+          It was my first time building such complex game from scratch. While it was challenging, it provided invaluable learning for me as an interaction designer.
+        </p>
+      </section>
+      
 
 
       <div class="carousel-container">
-        <div class="carousel-track" id="carousel-track">
-          <img src="Pizza1.png" alt="Slide 1" class="carousel-image" />
-          <img src="Pizza2.png" alt="Slide 2" class="carousel-image" />
-          <img src="Pizza3.png" alt="Slide 3" class="carousel-image" />
-          <img src="Pizza5.png" alt="Slide 5" class="carousel-image" />
-          <img src="Pizza6.png" alt="Slide 6" class="carousel-image" />
+        <div class="carousel-track" id="carousel-track1">
+          <img src="Pizza1.png" class="carousel-image" alt="Slide 1">
+          <img src="Pizza2.png" class="carousel-image" alt="Slide 2">
+          <img src="Pizza3.png" class="carousel-image" alt="Slide 3">
+          <img src="Pizza4.png" class="carousel-image" alt="Slide 4">
+          <img src="Pizza5.png" class="carousel-image" alt="Slide 5">
         </div>
-        <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-btn right" onclick="moveSlide(1)">&#10095;</button>
+        <button class="carousel-btn left" onclick="moveSlide1(-1)">&#10094;</button>
+        <button class="carousel-btn right" onclick="moveSlide1(1)">&#10095;</button>
       </div>
+  </section>
+
     </section>
 
     <div id="expandable-container">
@@ -113,18 +145,39 @@
       <h1> O-Ran Mixed Reality Experience </h1>
     </section>
 
+
+    <section class="sandbox">
+      <h3> Components Sandbox </h3>
+      <img src="oran1.png" class="draggable" style="left: 10px; top: 10px;">
+      <img src="oran2.png" class="draggable" style="left: 180px; top: 10px;">
+      <img src="oran3.png" class="draggable" style="left: 350px; top: 10px;">
+      <img src="oran4.png" class="draggable" style="left: 520px; top: 10px;">
+    </section>
+    
+    
+    
+    
+
   </div>
     
   <section id="oranmr-demo">
-    <div class="oranmr-container">
-      <div class="oranmr-image">
-        <img src="Justus.png" alt="Oran Mr Demo Screenshot">
+    <div style="text-align: center; margin: 2em 0;">
+
+      <div id="rotator">
+        <img id="scroll-image" src="List2A.png" alt="Demo Image">
       </div>
-      <div class="oranmr-text">
-        <h2> O-RAN Mixed Reality Experience</h2>
-        <p>
-          This Open Radio Access Network Demo in Mixed Reality visually simulates the complex network testing processes, enabling interactive and intuitive exploration of technical system interactions for both experts and non-experts.
-      </div>
+      
+
+     
+    
+      <section class="intro" id="intro">
+     
+        <div class="intro-text">
+          <p>
+            Learning by Doing. This Open Radio Access Network Demo in Mixed Reality visually simulates the complex network testing processes, enabling interactive and intuitive exploration of technical system interactions for both experts and non-experts. <br> <br> Watch demo below.
+          </p>
+        </div>
+      </section>
     </div>
   </section>
 
@@ -139,6 +192,68 @@
       allowfullscreen
     ></iframe>
 
+    <!-- i14y Lab -->
+  <section id="p5-wrapper">
+    <h1> Technical Demos at i14y Lab</h1>
+  </section>
+
+  <video controls width="720" autoplay loop muted playsinline>
+    <source src="3adv.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  <video controls width="720" autoplay loop muted playsinline>
+    <source src="4adv.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+  
+
+  <section>
+    <div class="content-container">
+      <!-- Text Section -->
+      <div class="text">
+        <p style="font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.1em;
+        color: #ccc;
+        line-height: 1.8;
+        letter-spacing: 0.02em;
+        max-width: 800px;
+        margin: 2em auto;
+        text-align: center;">
+During my one-year experience at i14y, Deutsche Telekom, a consortium focused on Open Radio Networks, Lab both as internship and working student, <br><br>
+I developed several technical demos: Augmented Reality, Physical-Digital interfaces, Touch Screens, animation...<br><br>
+I was able to develop skills in different creative approaches that fit the assignment—using game engines, web design, 3D rendering, motion, animation, and video editing.<br><br>
+Overall purpose: bring the topic of Open Radio Access closer to the audience. This inspired my Bachelor Thesis.
+</p>
+        <br>
+        <br>
+        <br>
+      </div>
+      
+      <!-- Picture Section -->
+      <div class="image">
+        <img src="Indoor.png" alt="Image 1 description" />
+      </div>
+      
+      <!-- Text Section -->
+      <div class="text">
+        <br>
+        <br>
+    
+        <p> <h2>Watch Overviews of the Demos below</h2>
+      </p>
+  </section>
+  <div id="expandable-container">
+    <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/2nn5nlPWrQ0"
+
+    title="YouTube video player"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+  </div>
+
       <!-- Future Workshop -->
       <section id="p5-wrapper">
         <h1> Optimize_ The Workshop </h1>
@@ -146,9 +261,14 @@
 
       <section id="carousel2">
         <p>
-          A participatory workshop on "Societal Pressure for Self-Optimization."<br>
+          A participatory workshop on "Societal Pressure for Self-Optimization"<br>
+          <br>
+
           Together, we explore the causes and dynamics of the pressure to constantly improve ourselves.<br>
+          <br>
+          
           We then co-create ideas for fostering an environment that supports healthy personal growth.<br>
+          <br>
           In collaboration with Annika Ehritt, Yette Shira Strauss Suhr, Luka Saje.
           <br>
           <br>
@@ -191,8 +311,11 @@
     
     <!-- Text Section -->
     <div class="text">
-      <p>It uses tactile modules and playful interaction to promote movement, cognition, and a sense of safety.<br>
-      Created in collaboration with Viktor Jarek
+      <br>
+      <p>It uses tactile modules and playful interaction to promote movement, cognition, and a sense of safety. <br>
+        Designed as a submission for the Rimowa Design Award, which I was honored to be chosen as an participant. <br>
+      Created in collaboration with Viktor Jarek.
+      <br>
       <br>
       <br>
       <br>
@@ -207,48 +330,7 @@
 </section>
    
     
-  <!-- i14y Lab -->
-  <section id="p5-wrapper">
-    <h1> Touchscreen Design at i14y Lab</h1>
-  </section>
-
-  <section>
-    <div class="content-container">
-      <!-- Text Section -->
-      <div class="text">
-        <p> During my one-year experience at i14y Lab, <br>a consortium focused on Open Radio Networks, <br>I developed several technical demos, <br>one of which is this touchscreen design.</p>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
-      
-      <!-- Picture Section -->
-      <div class="image">
-        <img src="Indoor.png" alt="Image 1 description" />
-      </div>
-      
-      <!-- Text Section -->
-      <div class="text">
-        <br>
-        <br>
-    
-        <p> To help lab visitors easily understand the services <br>offered without needing any technical background,<br> I designed this playful, engaging animations <br>that clearly explain the concepts.
-         
-      
-      </p>
-  </section>
-  <div id="expandable-container">
-    <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/-D0C874x754"
-
-    title="YouTube video player"
-    frameborder="0"
-    allowfullscreen
-  ></iframe>
-  </div>
+  
 
   <section id="contact">
     <br>
@@ -283,30 +365,102 @@
         </script>
 
 <script>
-let currentSlide1 = 0;
-const track1 = document.getElementById('carousel-track');
-const slides1 = document.querySelectorAll('.carousel-image');
+  // Carousel 1
+  let currentSlide1 = 0;
+  const track1 = document.getElementById('carousel-track1');
+  const slides1 = document.querySelectorAll('#carousel-track1 .carousel-image');
 
-function moveSlide(direction) {
-  currentSlide1 += direction;
-  if (currentSlide1 < 0) currentSlide1 = slides1.length - 1;
-  if (currentSlide1 >= slides1.length) currentSlide1 = 0;
-  track1.style.transform = `translateX(-${currentSlide1 * 100}%)`;
-}
+  function moveSlide1(direction) {
+    currentSlide1 += direction;
+    if (currentSlide1 < 0) currentSlide1 = slides1.length - 1;
+    if (currentSlide1 >= slides1.length) currentSlide1 = 0;
+    track1.style.transform = `translateX(-${currentSlide1 * 100}%)`;
+  }
 
-let currentSlide2 = 0;
-const track2 = document.getElementById('carousel-track2');
-const slides2 = document.querySelectorAll('#carousel-track2 .carousel-image');  // Important to select correctly.
+  // Carousel 2
+  let currentSlide2 = 0;
+  const track2 = document.getElementById('carousel-track2');
+  const slides2 = document.querySelectorAll('#carousel-track2 .carousel-image');
 
-function moveSlide2(direction) {
-  currentSlide2 += direction;
-  if (currentSlide2 < 0) currentSlide2 = slides2.length - 1;
-  if (currentSlide2 >= slides2.length) currentSlide2 = 0;
-  track2.style.transform = `translateX(-${currentSlide2 * 100}%)`;
-}
+  function moveSlide2(direction) {
+    currentSlide2 += direction;
+    if (currentSlide2 < 0) currentSlide2 = slides2.length - 1;
+    if (currentSlide2 >= slides2.length) currentSlide2 = 0;
+    track2.style.transform = `translateX(-${currentSlide2 * 100}%)`;
+  }
+</script>
+
+
+<script>
+  const container = document.querySelector('.sandbox');
+let currentDrag = null;
+let offsetX = 0, offsetY = 0;
+
+container.addEventListener('pointerdown', e => {
+  if (e.target.classList.contains('draggable')) {
+    e.preventDefault(); // prevent text/image dragging quirks
+    currentDrag = e.target;
+    const rect = currentDrag.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    currentDrag.setPointerCapture(e.pointerId);
+    currentDrag.style.cursor = 'grabbing';
+  }
+});
+
+container.addEventListener('pointermove', e => {
+  if (!currentDrag) return;
+  e.preventDefault();
+  const x = e.clientX - offsetX;
+  const y = e.clientY - offsetY;
+  currentDrag.style.left = `${x}px`;
+  currentDrag.style.top = `${y}px`;
+});
+
+container.addEventListener('pointerup', e => {
+  if (!currentDrag) return;
+  e.preventDefault();
+  currentDrag.releasePointerCapture(e.pointerId);
+  currentDrag.style.cursor = 'grab';
+  currentDrag = null;
+});
 
 
 </script>
+
+<script>
+  const images = [
+    'List2A.png',
+    'List2B.png',
+
+  ];
+  const imgEl = document.getElementById('scroll-image');
+  const numImages = images.length;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    // switch image every ~200px of scroll:
+    const segmentHeight = 200;
+    const index = Math.floor(scrollTop / segmentHeight) % numImages;
+    imgEl.src = images[index];
+  });
+</script>
+
+<script>
+  // JS
+const imagesList1 = ['List1A.png', 'List1A.png', 'List1C.png', 'List1D.png', 'List1D.png', 'List1F.png'];
+const imgEl1 = document.getElementById('scroll-image-list1');
+let idx1 = 0;
+
+// Change every 500ms (adjust as needed)
+setInterval(() => {
+  idx1 = (idx1 + 1) % imagesList1.length;
+  imgEl1.src = imagesList1[idx1];
+}, 500);
+
+  </script>
+  
 
 
         
