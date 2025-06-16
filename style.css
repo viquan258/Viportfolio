@@ -178,6 +178,121 @@ body {
     height: auto;
   }
   
+  /* Container for the bachelor thesis section */
+  #bachelorthesis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4em 2em;
+    justify-content: space-between;
+  }
+  
+  .bachelorthesis-text {
+    flex: 1 1 30%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1em;
+    color: #ccc;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    text-align: left;
+    min-width: 250px;
+  }
+  
+
+/* Style for paragraphs */
+#bachelorthesis-text p {
+  margin: 0 0 1.5em;
+  text-align: left;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1em;
+  color: #ccc;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+#i14y {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4em 2em;
+  justify-content: space-between;
+}
+
+.i14y-text {
+  flex: 1 1 30%;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1em;
+  color: #ccc;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  text-align: left;
+  min-width: 250px;
+}
+
+#workshop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4em 2em;
+  justify-content: space-between;
+}
+
+.workshop-text {
+  flex: 1 1 30%;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1em;
+  color: #ccc;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  text-align: left;
+  min-width: 250px;
+}
+
+#birdie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4em 2em;
+  justify-content: space-between;
+}
+
+.birdie-text {
+  flex: 1 1 30%;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1em;
+  color: #ccc;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  text-align: left;
+  min-width: 250px;
+}
+
+/* Distribute paragraphs evenly across three columns */
+#bachelorthesis-text p:nth-child(1) { grid-column: 1; }
+#bachelorthesis-text p:nth-child(2) { grid-column: 2; }
+#bachelorthesis-text p:nth-child(3) { grid-column: 3; }
+#bachelorthesis-text p:nth-child(4) { grid-column: 1; }
+#bachelorthesis-text p:nth-child(5) { grid-column: 2; }
+
+/* Responsive fallback for smaller screens */
+@media (max-width: 900px) {
+  #bachelorthesis {
+    grid-template-columns: 1fr;
+  }
+  #bachelorthesis-text p {
+    grid-column: 1 !important;
+  }
+}
+
+  
   
 
   #oranmr-demo {
@@ -245,20 +360,71 @@ body {
 
   #p5js-context {
     padding: 4em 2em;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    text-align: center;
+    /* remove center text-align for columns */
   }
   
-  .context-text {
+  .context-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em; /* space between columns */
+  }
+  
+  .context-col {
+    flex: 1 1 300px; /* flexible columns, won't be too narrow */
+    min-width: 280px;
+  }
+  
+  .context-col p {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.1em;
     color: #ccc;
-    line-height: 1.9;
+    line-height: 1.8;      /* slightly tighter for dual columns */
     letter-spacing: 0.02em;
-
+    text-align: left;       /* left-align text for readability */
+    margin: 0 0 1.5em 0;    /* spacing between paragraphs */
   }
+  
 
+/* Container for the two-column section */
+#game-context {
+  display: flex;
+  flex-wrap: wrap;           /* Allows columns to wrap on small screens */
+  gap: 2em;                  /* Space between columns */
+  padding: 4em 2em;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Each column inside the container */
+#game-context .column {
+  flex: 1 1 45%;             /* Grow & shrink, base width ≈ 45% */
+  box-sizing: border-box;
+  min-width: 300px;          /* Ensures readability on smaller screens */
+}
+
+/* Typography for column content */
+#game-context .column p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1em;
+  color: #ccc;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* On small screens (below 600px), stack columns */
+@media (max-width: 600px) {
+  #game-context {
+    flex-direction: column;
+    padding: 2em 1em;
+  }
+  #game-context .column {
+    flex: 1 1 100%;
+  }
+}
 
   
   
