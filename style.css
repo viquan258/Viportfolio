@@ -54,10 +54,7 @@ nav ul li a:hover {
   color: #007BFF; /* Change color on hover */
 }
 
-/* Add padding to the body to prevent content from being hidden under the fixed menu */
-body {
-  padding-top: 60px; /* Adjust based on the height of your nav bar */
-}
+
 
   /* Unity container */
   #unity-container {
