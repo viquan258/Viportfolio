@@ -19,6 +19,46 @@ body {
     z-index: 1;
   }
   
+  /* Style for the navigation bar */
+nav {
+  position: fixed; /* Makes the menu stay at the top */
+  top: 0; /* Sticks to the top of the page */
+  width: 100%; /* Full width */
+  background-color: #fff; /* Background color */
+  border-bottom: 1px solid #ccc; /* Optional: Add a border for separation */
+  z-index: 1000; /* Ensures it stays above other content */
+  padding: 0.5em 0; /* Adds some padding for better appearance */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centers the menu items */
+}
+
+nav ul li {
+  margin: 0 1em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+nav ul li a:hover {
+  color: #007BFF; /* Change color on hover */
+}
+
+/* Add padding to the body to prevent content from being hidden under the fixed menu */
+body {
+  padding-top: 60px; /* Adjust based on the height of your nav bar */
+}
+
   /* Unity container */
   #unity-container {
     position: relative;
