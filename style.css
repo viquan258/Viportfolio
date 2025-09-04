@@ -54,7 +54,41 @@ nav ul li a:hover {
   color: #007BFF; /* Change color on hover */
 }
 
+ /* Introduction section */
+ #intro {
+  display: flex;
+  align-items: center;
+  gap: 4em; /* ⬅️ increase this from 2em */
+  padding: 4em 5vw 2em;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  flex-wrap: wrap;
+}
 
+
+.intro-photo {
+  flex: 0 0 180px;
+}
+
+.intro-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid white;
+}
+
+.intro-text {
+  flex: 1;
+  max-width: 700px;
+}
+
+.intro-text h1,
+.intro-text p {
+  text-align: left;
+  margin: 0.6em 0;
+  font-size: 1.4em;
+  line-height: 1.8;
+}
 
   /* Unity container */
   #unity-container {
@@ -74,43 +108,54 @@ nav ul li a:hover {
     width: 100%;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
-  
-  
-  /* Introduction section */
-  #intro {
-    display: flex;
-    align-items: center;
-    gap: 4em; /* ⬅️ increase this from 2em */
-    padding: 4em 5vw 2em;
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-    flex-wrap: wrap;
+
+  #game {
+    text-align: center;
+    margin: 60px auto;
+    background: #111;
+    padding: 40px 40px 60px;
+    border-radius: 12px;
+    max-width: 90vw; /* increased from 1000px */
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
   
-  
-  .intro-photo {
-    flex: 0 0 180px;
+  #mrdemo {
+    text-align: center;
+    margin: 60px auto;
+    background: #111;
+    padding: 40px 40px 60px;
+    border-radius: 12px;
+    max-width: 90vw; /* increased from 1000px */
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
-  
-  .intro-photo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    border: 2px solid white;
+
+  #i14y {
+    text-align: center;
+    margin: 60px auto;
+    background: #111;
+    padding: 40px 40px 60px;
+    border-radius: 12px;
+    max-width: 90vw; /* increased from 1000px */
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
-  
-  .intro-text {
-    flex: 1;
-    max-width: 700px;
+
+  #others {
+    text-align: center;
+    margin: 60px auto;
+    background: #111;
+    padding: 40px 40px 60px;
+    border-radius: 12px;
+    max-width: 90vw; /* increased from 1000px */
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
+
+
   
-  .intro-text h1,
-  .intro-text p {
-    text-align: left;
-    margin: 0.6em 0;
-    font-size: 1.4em;
-    line-height: 1.8;
-  }
+ 
   
   /* Expandable section toggle */
   #expandable-container {
