@@ -131,7 +131,7 @@ nav ul li a:hover {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
 
-  #i14y {
+  #i14ytitle {
     text-align: center;
     margin: 60px auto;
     background: #111;
@@ -141,6 +141,7 @@ nav ul li a:hover {
     width: 100%;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   }
+  
 
   #others {
     text-align: center;
